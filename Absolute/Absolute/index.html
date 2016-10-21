@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Absolute Space</title>
+    <link rel="stylesheet" href="app.css" type="text/css" />
+    <script src="Absolute.js"></script>
+    <style>
+        body {
+            background-color: black;
+        }
+
+        #container {
+            width: 1024px;
+            height: 768px;
+            border: 1px black;
+            margin: 0px auto;
+            text-align: center;
+        }
+
+        #canvas {
+            border: 1px black;
+            width: 1024px;
+            height: 788px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="container">
+        <canvas id="canvas" width="800" height="600"></canvas>
+    </div>
+
+    <audio id="blast" src="sounds/blast.mp3" style="display: none;" />
+    <audio id="collisn" src="sounds/collisn.mp3" style="display: none;" />
+    <audio id="destroy" src="sounds/mdestr.mp3" style="display: none;" />	
+
+    <img id="sprite-boom0" src="images/boom0.png" style="display: none;" />
+    <img id="sprite-boom1" src="images/boom1.png" style="display: none;" />
+    <img id="sprite-boom2" src="images/boom2.png" style="display: none;" />
+    <img id="sprite-boom3" src="images/boom3.png" style="display: none;" />
+    <img id="sprite-boom4" src="images/boom4.png" style="display: none;" />
+    <img id="sprite-bullet" src="images/bullet.png" style="display: none;" />
+    <img id="sprite-fire0" src="images/fire0.png" style="display: none;" />
+    <img id="sprite-fire1" src="images/fire1.png" style="display: none;" />
+    <img id="sprite-meteor" src="images/meteor.png" style="display: none;" />
+    <img id="sprite-ship" src="images/ship.png" style="display: none;" />
+</body>
+</html>
