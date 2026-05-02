@@ -1,0 +1,15 @@
+﻿body {
+    background-color: black;
+}
+
+img {
+    display: none;
+}
+
+.container {
+    width: 1024px;
+    height: 768px;
+    border: 1px solid black;
+    margin: 0 auto;
+    text-align: center;
+}
