@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Absolute Space</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./css/app.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <div id="container">
+        <canvas id="canvas" width="800" height="600"></canvas>
+    </div>
+
+    <audio id="blast" src="sounds/blast.mp3"></audio>
+    <audio id="collisn" src="sounds/collisn.mp3"></audio>
+    <audio id="destroy" src="sounds/mdestr.mp3"></audio>
+
+    <img id="sprite-boom0" src="images/boom0.png" alt="" />
+    <img id="sprite-boom1" src="images/boom1.png" alt="" />
+    <img id="sprite-boom2" src="images/boom2.png" alt="" />
+    <img id="sprite-boom3" src="images/boom3.png" alt="" />
+    <img id="sprite-boom4" src="images/boom4.png" alt="" />
+    <img id="sprite-bullet" src="images/bullet.png" alt="" />
+    <img id="sprite-fire0" src="images/fire0.png" alt="" />
+    <img id="sprite-fire1" src="images/fire1.png" alt="" />
+    <img id="sprite-meteor" src="images/meteor.png" alt="" />
+    <img id="sprite-ship" src="images/ship.png" alt="" />
+
+    <script type="module">
+        import { Absolute } from "./out/Absolute.js";
+        let absoloute = new Absolute();
+        absoloute.Main();
+    </script>
+
+</body>
+
+</html>
