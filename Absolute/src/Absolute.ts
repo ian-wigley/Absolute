@@ -22,11 +22,11 @@ export class Absolute {
     bul_xs: number = 54;
     bul_ys: number = 8;
     meteor: HTMLImageElement;
-    maxmet: number;
-    metcount: number;
-    mtotal: number;
-    mrenew: number;
-    metmy: number;
+    maxmet: number = 0;
+    metcount: number = 0;
+    mtotal: number = 0;
+    mrenew: number = 0;
+    metmy: number = 0;
     metx: number[];
     mety: number[];
     metf: number[];
@@ -38,11 +38,11 @@ export class Absolute {
     starsC: string[];
     numStars: number = 30;
     speed: number = 6;
-    xSize: number;
-    ySize: number;
+    xSize: number = 0;
+    ySize: number = 0;
     boom: HTMLImageElement[];
-    rndbx: number;
-    rndby: number;
+    rndbx: number = 0;
+    rndby: number = 0;
     rndcnt: number = 777;
     sxbom: number = 71;
     sybom: number = 100;
@@ -59,15 +59,15 @@ export class Absolute {
     bcur: number = 0;
     renew: number = 0;
     rcnt: number = 0;
-    sstretch: number;
+    sstretch: number = 0;
     txtalign: number = 100;
     score: number = 0;
     blast: HTMLAudioElement;
     crash: HTMLAudioElement;
     kill: HTMLAudioElement;
-    sunbird: boolean;
-    sbefore: boolean;
-    safter: boolean;
+    sunbird: boolean = false;
+    sbefore: boolean = false;
+    safter: boolean = false;
     sbx: number = 0;
     sby: number = 0;
     sbmove: number = 0;
@@ -420,7 +420,11 @@ export class Absolute {
     public MetHit(f: number): boolean {
         for (let n: number = 0; n < this.maxmet; n++) {
             if (this.metx[n] >= 0) {
-                if (this.metr[n] && this.bx[f] + this.bul_xs > this.metx[n] && this.bx[f] < this.metx[n] + this.sxmet && this.by[f] + this.bul_ys > this.mety[n] && this.by[f] < this.mety[n] + this.symet) {
+                if (this.metr[n] 
+                    && this.bx[f] + this.bul_xs > this.metx[n] 
+                    && this.bx[f] < this.metx[n] + this.sxmet 
+                    && this.by[f] + this.bul_ys > this.mety[n] 
+                    && this.by[f] < this.mety[n] + this.symet) {
                     this.DelMeteor(n);
                     this.kill.play();
                     return true;
