@@ -94,7 +94,7 @@ export class Absolute {
     public Main(): void {
         this.Init();
         this.installListeners();
-        this.addHitListener(this.canvas);
+        this.addHitListener();
         this.LifeCycle();
     }
 
@@ -260,7 +260,7 @@ export class Absolute {
             this.ctx.font = "14px Arial";
             this.ctx.fillText("(c)2000 by Aleksey Udovydchenko", (this.canvas.width - 240) / 2, (this.canvas.height - 40) / 2);
 
-            this.ctx.fillText("freewebdesign@crosswinds.net", (this.canvas.width - 240) / 2, (this.canvas.height - 0) / 2);
+            this.ctx.fillText("freewebdesign@crosswinds.net", (this.canvas.width - 240) / 2, this.canvas.height / 2);
 
             this.ctx.fillText("Javascript conversion by Ian Wigley 2016", (this.canvas.width - 290) / 2,
                 (this.canvas.height + 40) / 2);
@@ -270,7 +270,7 @@ export class Absolute {
             this.ctx.fillText("Press the Left Mouse Button to start game", (this.canvas.width - 260) / 2, (this.canvas.height - 40) / 2);
 
             this.ctx.fillText("Use cursor keys to move, press left CTRL to fire", (this.canvas.width - 300) / 2,
-                (this.canvas.height - 0) / 2);
+                this.canvas.height / 2);
             this.ctx.fillText("LAST SCORE: " + this.score, (this.canvas.width - 100) / 2, (this.canvas.height + 40) / 2);
         }
 
@@ -600,9 +600,7 @@ export class Absolute {
             this.safter = false;
         }
 
-        this.sbefore = false;
-        if (this.y + (Math.trunc(this.sysize / 2)) > this.sby)
-            this.sbefore = true;
+        this.sbefore = this.y + (Math.trunc(this.sysize / 2)) > this.sby;
     }
 
     public BirdHit(blx: number, bly: number): boolean {
@@ -647,7 +645,7 @@ export class Absolute {
             true);
     }
 
-    private addHitListener(element: HTMLElement): void {
+    private addHitListener(): void {
         globalThis.addEventListener("keydown", (event) => {
             this.onKeyPress(event);
             return null;
@@ -686,10 +684,10 @@ export class Absolute {
                 }
                 break;
             case 'ArrowLeft':
-                this.dx = -1;
+                this.dx = -0.25;
                 break;
             case 'ArrowRight':
-                this.dx += 1;
+                this.dx = 0.25;
                 break;
         }
     }
